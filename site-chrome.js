@@ -52,6 +52,7 @@
           <div>
             <img class="footer-lockup" src="brand/aracore-tagline-lockup-darkmode.svg" alt="Aracore - Settlement Infrastructure for Digital Dollars" />
             <p style="line-height:1.6">Institutional Settlement Network for cross-border payout and settlement orchestration.</p>
+            <a href="mailto:ops@aracore.io">ops@aracore.io</a>
           </div>
           <div>
             <b>Product</b>
