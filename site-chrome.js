@@ -62,7 +62,6 @@
           <div>
             <b>Developers</b>
             <a href="developers.html">API Docs</a>
-            <a href="developers.html">Sample Code</a>
             <a href="onboarding.html">Onboarding</a>
           </div>
           <div>
