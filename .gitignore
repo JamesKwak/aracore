@@ -1,0 +1,10 @@
+# Windows / Google Drive artifacts
+desktop.ini
+Thumbs.db
+
+# Personal tool settings (keep .claude/launch.json shared)
+.claude/settings.local.json
+
+# Scratch
+*.tmp
+*.bak

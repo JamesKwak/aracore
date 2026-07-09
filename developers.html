@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Developers - Aracore | Stablecoin Settlement Infrastructure for Regulated Markets</title>
+<meta name="description" content="Aracore provides stablecoin settlement infrastructure for regulated markets, connecting institutional payout, messaging, lock verification, and settlement orchestration." />
+<meta property="og:title" content="Developers - Aracore | Stablecoin Settlement Infrastructure for Regulated Markets" />
+<meta property="og:description" content="Aracore provides stablecoin settlement infrastructure for regulated markets, connecting institutional payout, messaging, lock verification, and settlement orchestration." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Aracore" />
+<meta property="og:image" content="https://www.aracore.io/brand/og-image.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Developers - Aracore | Stablecoin Settlement Infrastructure for Regulated Markets" />
+<meta name="twitter:description" content="Aracore provides stablecoin settlement infrastructure for regulated markets, connecting institutional payout, messaging, lock verification, and settlement orchestration." />
+<meta name="twitter:image" content="https://www.aracore.io/brand/og-image.png" />
+<link rel="canonical" href="https://www.aracore.io/developers.html" />
+<meta property="og:url" content="https://www.aracore.io/developers.html" />
+<meta name="twitter:url" content="https://www.aracore.io/developers.html" />
+<link rel="icon" href="favicon/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5Y067726SX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5Y067726SX');
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="site-chrome-top"></div>
+<main>
+  <section id="developers">
+    <div class="container">
+      <div class="dark-section">
+        <div class="api-grid">
+          <div><div class="kicker">Developers</div><h1>API-first infrastructure for institutional settlement workflows.</h1><p>Financial institutions and technical partners can create quotes, transactions, locks, settlements, and status checks through APIs.</p><div class="docs-list"><a class="doc-item" href="#api-reference"><span><b>API Reference</b><span>quotes, transactions, locks, settlements, status</span></span><span>&gt;</span></a><a class="doc-item" href="#sample-code"><span><b>Sample Code</b><span>Integration examples for partner systems</span></span><span>&gt;</span></a><a class="doc-item" href="#integration-guide"><span><b>Integration Guide</b><span>Test flows, policies, and launch procedures</span></span><span>&gt;</span></a></div></div>
+          <div class="code-panel"><div class="code-tabs"><span class="tab active">Quote</span><span class="tab">Transaction</span><span class="tab">Settlement</span></div><pre><code><span class="method">POST</span> /quotes
+
+{
+  <span class="key">"sender_institution"</span>: <span class="str">"BANK_KR"</span>,
+  <span class="key">"receiver_institution"</span>: <span class="str">"BANK_TH"</span>,
+  <span class="key">"send_amount"</span>: <span class="str">"1000000"</span>,
+  <span class="key">"send_currency"</span>: <span class="str">"KRW"</span>,
+  <span class="key">"payout_currency"</span>: <span class="str">"THB"</span>,
+  <span class="key">"settlement_reference"</span>: <span class="str">"ISN-2026-0001"</span>
+}</code></pre></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-chrome-footer"></div>
+<script src="site-chrome.js"></script>
+</body>
+</html>
+
+
+
+
+
+
