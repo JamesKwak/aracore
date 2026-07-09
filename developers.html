@@ -39,12 +39,10 @@
     <div class="container">
       <div class="dark-section">
         <div class="api-grid">
-          <div><div class="kicker">Developers</div><h1>API-first infrastructure for institutional settlement workflows.</h1><p>Financial institutions and technical partners can create quotes, transactions, locks, settlements, and status checks through APIs.</p><div class="docs-list"><a class="doc-item" href="#api-reference"><span><b>API Reference</b><span>quotes, transactions, locks, settlements, status</span></span><span>&gt;</span></a><a class="doc-item" href="#sample-code"><span><b>Sample Code</b><span>Integration examples for partner systems</span></span><span>&gt;</span></a><a class="doc-item" href="#integration-guide"><span><b>Integration Guide</b><span>Test flows, policies, and launch procedures</span></span><span>&gt;</span></a></div></div>
+          <div><div class="kicker">Developers</div><h1>API-first infrastructure for institutional settlement workflows.</h1><p>Financial institutions and technical partners can create quotes, transactions, locks, settlements, and status checks through APIs.</p><div class="docs-list"><a class="doc-item" href="#api-reference"><span><b>API Reference</b><span>quotes, transactions, locks, settlements, status</span></span><span>&gt;</span></a></div></div>
           <div class="code-panel"><div class="code-tabs"><span class="tab active">Quote</span><span class="tab">Transaction</span><span class="tab">Settlement</span></div><pre><code><span class="method">POST</span> /quotes
 
 {
-  <span class="key">"sender_institution"</span>: <span class="str">"BANK_KR"</span>,
-  <span class="key">"receiver_institution"</span>: <span class="str">"BANK_TH"</span>,
   <span class="key">"send_amount"</span>: <span class="str">"1000000"</span>,
   <span class="key">"send_currency"</span>: <span class="str">"KRW"</span>,
   <span class="key">"payout_currency"</span>: <span class="str">"THB"</span>,
