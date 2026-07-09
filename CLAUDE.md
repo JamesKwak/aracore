@@ -132,6 +132,31 @@ in `index.html`**:
 
 The mini SVGs on `usecases.html` are static (no `data-step`); leave them inline.
 
+## PR / News feed (company.html)
+
+The `PR / News` resource card holds a `.news-list` of linked items. To add
+one, copy an existing `<a class="news-item">` block and change only the href,
+tag, title, and meta:
+
+```html
+<a class="news-item" href="<article-url>" target="_blank" rel="noopener">
+  <span class="news-tag">Press</span>
+  <span class="news-title">Exact article headline</span>
+  <span class="news-meta">Source · Mon YYYY</span>
+</a>
+```
+
+- **Tags** are one of **`Press`** (external coverage / releases),
+  **`Product`** (product updates), **`Tech`** (engineering releases). Add a new
+  tag word only if a genuinely new category appears.
+- External links always get `target="_blank" rel="noopener"` — soft-nav skips
+  them (cross-origin) so they open in a new tab.
+- Quote the real article headline verbatim (keep its original casing/language);
+  set `lang="ja"` etc. on the `.news-title` for non-English titles. This is a
+  citation, so it is exempt from the sentence-case UI rule.
+- Keep the trailing "…will be posted here as they become available." line while
+  the feed is sparse; drop it once there are enough real items.
+
 ## Design system
 
 Follow [`aracore-corp/DESIGN.md`](aracore-corp/DESIGN.md) — it is the canonical
