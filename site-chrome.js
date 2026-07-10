@@ -69,7 +69,7 @@
           <div>
             <b>Product</b>
             <a href="product.html">ISN</a>
-            <a href="index.html#flow">Settlement Flow</a>
+            <a href="product.html#flows">Settlement Flow</a>
             <a href="product.html#tech">Tech &amp; IP</a>
           </div>
           <div>

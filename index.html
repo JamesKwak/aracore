@@ -38,503 +38,94 @@
   <section class="hero" id="home">
     <div class="container">
       <div class="hero-copy">
-        <div class="hero-kicker"><span></span>Institutional Settlement Network</div>
-        <h1>Stablecoin settlement infrastructure for regulated markets.</h1>
-        <p>Aracore connects institutional payout instructions, partner messaging, asset lock verification, settlement demand, and API integration into one controlled operating workflow.</p>
-        <div class="hero-actions"><a class="btn primary" href="product.html">View settlement flow</a><a class="btn" href="developers.html">Preview API docs</a></div>
-        <div class="hero-proof">
-          <div class="proof-pill"><b>Fast payout</b> with separated settlement control</div>
-          <div class="proof-pill"><b>Shared reference</b> across every participant</div>
-          <div class="proof-pill"><b>API-first</b> integration for regulated partners</div>
+        <h1>The settlement infrastructure for regulated markets.</h1>
+        <p>Complementing existing USD rails by enabling direct settlement between local stablecoin systems.</p>
+      </div>
+      <div class="isn-diagram" role="img" aria-label="Aracore ISN sits as a non-custodial layer between a sending financial institution and a receiving financial institution.">
+        <div class="isn-node">
+          <span class="isn-role">Sending FI</span>
+          <b class="isn-name">Institution A</b>
+          <span class="isn-note">Payout request</span>
+        </div>
+        <span class="isn-arrow" aria-hidden="true">&rarr;</span>
+        <div class="isn-node core">
+          <span class="isn-role">Aracore</span>
+          <b class="isn-name">ISN</b>
+          <span class="isn-sub">Messaging · Lock verification · Settlement</span>
+          <span class="isn-note">Non-custodial layer</span>
+        </div>
+        <span class="isn-arrow" aria-hidden="true">&rarr;</span>
+        <div class="isn-node">
+          <span class="isn-role">Receiving FI</span>
+          <b class="isn-name">Institution B</b>
+          <span class="isn-note">Local payout</span>
         </div>
       </div>
-      <div class="demo-screen" id="flow">
-  <div class="screen-head">
-    <div class="dots"><span></span><span></span><span></span></div>
-    <div class="screen-title">Live settlement orchestration</div>
-  </div>
-  <div class="flow-wrap">
-    <svg class="flow-landscape" viewBox="0 0 1200 700" role="img" aria-labelledby="flow-title flow-desc">
-      <title id="flow-title">Lock and release remittance process</title>
-      <desc id="flow-desc">A remittance request moves from the sending institution through Aracore's ISN — secure message routing and blockchain-backed collateral — to the receiving institution and beneficiary, message by message.</desc>
-      <defs>
-        <marker id="arrow-blue" data-tone="blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker>
-        <marker id="arrow-cyan" data-tone="cyan" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker>
-        <marker id="arrow-deep" data-tone="deep" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker>
-      </defs>
-      <text x="600" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#111827">Lock &amp; release: remittance process</text>
-      <text x="600" y="68" text-anchor="middle" font-size="13" fill="#6b7280">Every participant settles through the ISN — messages activate in sequence as funds lock and release.</text>
-
-      <!-- ISN boundary -->
-      <rect x="226" y="110" width="774" height="560" rx="18" style="fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:7 6"/>
-      <text x="613" y="142" text-anchor="middle" font-size="16" font-weight="700" fill="#475569">ISN</text>
-
-      <!-- flow connectors (activate in sequence) -->
-      <path class="flowline" data-step="1" data-tone="blue" d="M180 325 H250" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M460 242 H515" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M705 242 H770" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M460 377 H515" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M705 377 H770" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M355 435 V545" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M440 579 H610 V409" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="8" data-tone="cyan" d="M980 325 H1035" stroke-width="3" fill="none" marker-end="url(#arrow-cyan)"/>
-
-      <!-- Sender -->
-      <g class="box" transform="translate(0 0)">
-        <rect x="30" y="250" width="150" height="150" rx="14"/>
-        <text x="105" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Sender</text>
-        <text class="label" data-step="1" text-anchor="middle" font-size="11" fill="#374151"><tspan x="105" y="324"><tspan fill="#0030b6" font-weight="600">1. </tspan>Requests</tspan><tspan x="105" y="340">Remittance</tspan><tspan x="105" y="356">(Sending Currency)</tspan></text>
-      </g>
-
-      <!-- OFI -->
-      <g class="box" data-tone="blue">
-        <rect x="250" y="185" width="210" height="250" rx="16"/>
-        <text x="355" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">OFI</text>
-        <text class="label" data-step="2" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="262"><tspan fill="#0030b6" font-weight="600">2-1. </tspan>Requests</tspan><tspan x="355" y="278">Remittance Quote</tspan></text>
-        <text class="label" data-step="4" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="312"><tspan fill="#0030b6" font-weight="600">3-1. </tspan>Sends</tspan><tspan x="355" y="328">Remittance Info.</tspan></text>
-        <text class="label" data-step="6" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="372"><tspan fill="#041460" font-weight="600">4-1. </tspan>Deposits Collateral</tspan><tspan x="355" y="388">(Sending Country</tspan><tspan x="355" y="404">Stablecoin)</tspan></text>
-      </g>
-
-      <!-- Secure Message Routing -->
-      <g class="box">
-        <rect x="515" y="210" width="190" height="64" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="610" y="238" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Secure Message</text>
-        <text x="610" y="256" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Routing</text>
-      </g>
-
-      <!-- Blockchain Operations -->
-      <g class="box">
-        <rect x="515" y="345" width="190" height="64" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="610" y="373" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Blockchain</text>
-        <text x="610" y="391" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Operations</text>
-      </g>
-
-      <!-- BFI -->
-      <g class="box" data-tone="cyan">
-        <rect x="770" y="185" width="210" height="250" rx="16"/>
-        <text x="875" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">BFI</text>
-        <text class="label" data-step="3" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="262"><tspan fill="#041460" font-weight="600">2-2. </tspan>Returns</tspan><tspan x="875" y="278">Confirmed Quote</tspan></text>
-        <text class="label" data-step="5" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="312"><tspan fill="#041460" font-weight="600">3-2. </tspan>Validates</tspan><tspan x="875" y="328">Remittance Info.</tspan></text>
-        <text class="label" data-step="7" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="366"><tspan fill="#041460" font-weight="600">4-2. </tspan>Validates Collateral</tspan></text>
-        <text class="label" data-step="8" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="404"><tspan fill="#0030b6" font-weight="600">5. </tspan>Pays Beneficiary</tspan></text>
-      </g>
-
-      <!-- Collateral contracts -->
-      <g class="box" data-tone="deep">
-        <rect x="270" y="545" width="170" height="68" rx="14"/>
-        <text x="355" y="575" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">Collateral</text>
-        <text x="355" y="593" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">Contract</text>
-      </g>
-      <g class="box" data-tone="deep">
-        <rect x="790" y="545" width="170" height="68" rx="14"/>
-        <text x="875" y="575" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">Collateral</text>
-        <text x="875" y="593" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">Contract</text>
-      </g>
-
-      <!-- Beneficiary -->
-      <g class="box">
-        <rect x="1035" y="250" width="150" height="150" rx="14"/>
-        <text x="1110" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Beneficiary</text>
-        <text class="label" data-step="9" text-anchor="middle" font-size="11" fill="#374151"><tspan x="1110" y="324"><tspan fill="#0030b6" font-weight="600">6. </tspan>Receives Funds</tspan><tspan x="1110" y="340">(Receiving</tspan><tspan x="1110" y="356">Currency)</tspan></text>
-      </g>
-    </svg>
-
-    <svg class="flow-portrait" viewBox="0 0 480 1180" role="img" aria-labelledby="flow-title-v flow-desc-v">
-      <title id="flow-title-v">Lock and release remittance process</title>
-      <desc id="flow-desc-v">A remittance request moves from the sending institution through Aracore's ISN to the receiving institution and beneficiary, message by message.</desc>
-      <defs>
-        <marker id="arrow-blue-v" data-tone="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"/></marker>
-        <marker id="arrow-cyan-v" data-tone="cyan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"/></marker>
-        <marker id="arrow-deep-v" data-tone="deep" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"/></marker>
-      </defs>
-      <text x="240" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Lock &amp; release: remittance process</text>
-      <text x="240" y="52" text-anchor="middle" font-size="10.5" fill="#6b7280">Messages activate in sequence through the ISN.</text>
-
-      <!-- ISN boundary -->
-      <rect x="28" y="214" width="424" height="730" rx="16" style="fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:7 6"/>
-      <text x="240" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">ISN</text>
-
-      <!-- connectors -->
-      <path class="flowline" data-step="1" data-tone="blue" d="M240 172 V214" stroke-width="2" fill="none" marker-end="url(#arrow-blue-v)"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M240 438 V470" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M240 520 V548" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M240 598 V628" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M142 860 V598" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="8" data-tone="cyan" d="M240 824 V980" stroke-width="2" fill="none" marker-end="url(#arrow-cyan-v)"/>
-
-      <!-- Sender -->
-      <g class="box">
-        <rect x="160" y="80" width="160" height="92" rx="12"/>
-        <text x="240" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Sender</text>
-        <text class="label" data-step="1" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="136"><tspan fill="#0030b6" font-weight="600">1. </tspan>Requests Remittance</tspan><tspan x="240" y="151">(Sending Currency)</tspan></text>
-      </g>
-
-      <!-- OFI -->
-      <g class="box" data-tone="blue">
-        <rect x="54" y="262" width="372" height="176" rx="16"/>
-        <text x="240" y="292" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">OFI</text>
-        <text class="label" data-step="2" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="320"><tspan fill="#0030b6" font-weight="600">2-1. </tspan>Requests Remittance Quote</tspan></text>
-        <text class="label" data-step="4" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="362"><tspan fill="#0030b6" font-weight="600">3-1. </tspan>Sends Remittance Info.</tspan></text>
-        <text class="label" data-step="6" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="404"><tspan fill="#041460" font-weight="600">4-1. </tspan>Deposits Collateral</tspan><tspan x="240" y="419">(Sending Country Stablecoin)</tspan></text>
-      </g>
-
-      <!-- Secure Message Routing -->
-      <g class="box">
-        <rect x="120" y="470" width="240" height="50" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="240" y="500" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Secure Message Routing</text>
-      </g>
-
-      <!-- Blockchain Operations -->
-      <g class="box">
-        <rect x="120" y="548" width="240" height="50" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="240" y="578" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Blockchain Operations</text>
-      </g>
-
-      <!-- BFI -->
-      <g class="box" data-tone="cyan">
-        <rect x="54" y="628" width="372" height="196" rx="16"/>
-        <text x="240" y="658" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">BFI</text>
-        <text class="label" data-step="3" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="686"><tspan fill="#041460" font-weight="600">2-2. </tspan>Returns Confirmed Quote</tspan></text>
-        <text class="label" data-step="5" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="726"><tspan fill="#041460" font-weight="600">3-2. </tspan>Validates Remittance Info.</tspan></text>
-        <text class="label" data-step="7" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="766"><tspan fill="#041460" font-weight="600">4-2. </tspan>Validates Collateral</tspan></text>
-        <text class="label" data-step="8" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="800"><tspan fill="#0030b6" font-weight="600">5. </tspan>Pays Beneficiary</tspan></text>
-      </g>
-
-      <!-- Collateral contracts -->
-      <g class="box" data-tone="deep">
-        <rect x="54" y="860" width="176" height="56" rx="12"/>
-        <text x="142" y="893" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">Collateral Contract</text>
-      </g>
-      <g class="box" data-tone="deep">
-        <rect x="250" y="860" width="176" height="56" rx="12"/>
-        <text x="338" y="893" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">Collateral Contract</text>
-      </g>
-
-      <!-- Beneficiary -->
-      <g class="box">
-        <rect x="160" y="980" width="160" height="92" rx="12"/>
-        <text x="240" y="1012" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Beneficiary</text>
-        <text class="label" data-step="9" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="1036"><tspan fill="#0030b6" font-weight="600">6. </tspan>Receives Funds</tspan><tspan x="240" y="1051">(Receiving Currency)</tspan></text>
-      </g>
-    </svg>
-  </div>
-  <div class="flow-wrap">
-    <svg class="flow-landscape" viewBox="0 0 1200 700" role="img" aria-labelledby="settle-title settle-desc">
-      <title id="settle-title">Net settlement clearing process</title>
-      <desc id="settle-desc">At the end of a settlement cycle, locked collateral is netted across institutions and released through Aracore's ISN — net settlement demand, blockchain-backed release, and credit — message by message.</desc>
-      <defs>
-        <marker id="s-arrow-blue" data-tone="blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker>
-        <marker id="s-arrow-cyan" data-tone="cyan" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker>
-        <marker id="s-arrow-deep" data-tone="deep" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker>
-      </defs>
-      <text x="600" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#111827">Net settlement: institutional clearing</text>
-      <text x="600" y="68" text-anchor="middle" font-size="13" fill="#6b7280">At cycle close, locked collateral nets across institutions and releases through the ISN.</text>
-
-      <!-- ISN boundary -->
-      <rect x="226" y="110" width="774" height="560" rx="18" style="fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:7 6"/>
-      <text x="613" y="142" text-anchor="middle" font-size="16" font-weight="700" fill="#475569">ISN</text>
-
-      <!-- flow connectors (activate in sequence) -->
-      <path class="flowline" data-step="1" data-tone="blue" d="M180 325 H250" stroke-width="3" fill="none" marker-end="url(#s-arrow-blue)"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M460 242 H515" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M705 242 H770" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M460 377 H515" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M705 377 H770" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M355 435 V545" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M440 579 H610 V409" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="8" data-tone="cyan" d="M980 325 H1035" stroke-width="3" fill="none" marker-end="url(#s-arrow-cyan)"/>
-
-      <!-- Sending Institution -->
-      <g class="box">
-        <rect x="30" y="250" width="150" height="150" rx="14"/>
-        <text x="105" y="284" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Sending</text>
-        <text x="105" y="302" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Institution</text>
-        <text class="label" data-step="1" text-anchor="middle" font-size="11" fill="#374151"><tspan x="105" y="332"><tspan fill="#0030b6" font-weight="600">1. </tspan>Submits</tspan><tspan x="105" y="348">settlement batch</tspan><tspan x="105" y="364">(Sending Country)</tspan></text>
-      </g>
-
-      <!-- OFI -->
-      <g class="box" data-tone="blue">
-        <rect x="250" y="185" width="210" height="250" rx="16"/>
-        <text x="355" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">OFI</text>
-        <text class="label" data-step="2" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="262"><tspan fill="#0030b6" font-weight="600">2-1. </tspan>Reports</tspan><tspan x="355" y="278">net position</tspan></text>
-        <text class="label" data-step="4" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="312"><tspan fill="#0030b6" font-weight="600">3-1. </tspan>Instructs</tspan><tspan x="355" y="328">collateral release</tspan></text>
-        <text class="label" data-step="6" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="372"><tspan fill="#041460" font-weight="600">4-1. </tspan>Releases collateral</tspan><tspan x="355" y="388">(Sending Country</tspan><tspan x="355" y="404">Stablecoin)</tspan></text>
-      </g>
-
-      <!-- Net Settlement Demand -->
-      <g class="box">
-        <rect x="515" y="210" width="190" height="64" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="610" y="238" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Net Settlement</text>
-        <text x="610" y="256" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Demand</text>
-      </g>
-
-      <!-- Blockchain Operations -->
-      <g class="box">
-        <rect x="515" y="345" width="190" height="64" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="610" y="373" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Blockchain</text>
-        <text x="610" y="391" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Operations</text>
-      </g>
-
-      <!-- BFI -->
-      <g class="box" data-tone="cyan">
-        <rect x="770" y="185" width="210" height="250" rx="16"/>
-        <text x="875" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">BFI</text>
-        <text class="label" data-step="3" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="262"><tspan fill="#041460" font-weight="600">2-2. </tspan>Reports</tspan><tspan x="875" y="278">net position</tspan></text>
-        <text class="label" data-step="5" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="312"><tspan fill="#041460" font-weight="600">3-2. </tspan>Validates</tspan><tspan x="875" y="328">net demand</tspan></text>
-        <text class="label" data-step="7" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="366"><tspan fill="#041460" font-weight="600">4-2. </tspan>Confirms release</tspan></text>
-        <text class="label" data-step="8" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="404"><tspan fill="#0030b6" font-weight="600">5. </tspan>Credits settlement</tspan></text>
-      </g>
-
-      <!-- Collateral contracts -->
-      <g class="box" data-tone="deep">
-        <rect x="270" y="545" width="170" height="68" rx="14"/>
-        <text x="355" y="575" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">Collateral</text>
-        <text x="355" y="593" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">Contract</text>
-      </g>
-      <g class="box" data-tone="deep">
-        <rect x="790" y="545" width="170" height="68" rx="14"/>
-        <text x="875" y="575" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">Collateral</text>
-        <text x="875" y="593" text-anchor="middle" font-size="12" font-weight="600" fill="#374151">Contract</text>
-      </g>
-
-      <!-- Receiving Institution -->
-      <g class="box">
-        <rect x="1035" y="250" width="150" height="150" rx="14"/>
-        <text x="1110" y="284" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Receiving</text>
-        <text x="1110" y="302" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Institution</text>
-        <text class="label" data-step="9" text-anchor="middle" font-size="11" fill="#374151"><tspan x="1110" y="332"><tspan fill="#0030b6" font-weight="600">6. </tspan>Receives net</tspan><tspan x="1110" y="348">settlement</tspan><tspan x="1110" y="364">(Receiving Country)</tspan></text>
-      </g>
-    </svg>
-
-    <svg class="flow-portrait" viewBox="0 0 480 1180" role="img" aria-labelledby="settle-title-v settle-desc-v">
-      <title id="settle-title-v">Net settlement clearing process</title>
-      <desc id="settle-desc-v">At cycle close, locked collateral is netted across institutions and released through Aracore's ISN, message by message.</desc>
-      <defs>
-        <marker id="s-arrow-blue-v" data-tone="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"/></marker>
-        <marker id="s-arrow-cyan-v" data-tone="cyan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"/></marker>
-        <marker id="s-arrow-deep-v" data-tone="deep" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"/></marker>
-      </defs>
-      <text x="240" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Net settlement: institutional clearing</text>
-      <text x="240" y="52" text-anchor="middle" font-size="10.5" fill="#6b7280">Locked collateral nets and releases through the ISN.</text>
-
-      <!-- ISN boundary -->
-      <rect x="28" y="214" width="424" height="730" rx="16" style="fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:7 6"/>
-      <text x="240" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">ISN</text>
-
-      <!-- connectors -->
-      <path class="flowline" data-step="1" data-tone="blue" d="M240 172 V214" stroke-width="2" fill="none" marker-end="url(#s-arrow-blue-v)"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M240 438 V470" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M240 520 V548" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M240 598 V628" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M142 860 V598" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="8" data-tone="cyan" d="M240 824 V980" stroke-width="2" fill="none" marker-end="url(#s-arrow-cyan-v)"/>
-
-      <!-- Sending Institution -->
-      <g class="box">
-        <rect x="160" y="80" width="160" height="92" rx="12"/>
-        <text x="240" y="110" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111827">Sending Institution</text>
-        <text class="label" data-step="1" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="134"><tspan fill="#0030b6" font-weight="600">1. </tspan>Submits settlement batch</tspan><tspan x="240" y="149">(Sending Country)</tspan></text>
-      </g>
-
-      <!-- OFI -->
-      <g class="box" data-tone="blue">
-        <rect x="54" y="262" width="372" height="176" rx="16"/>
-        <text x="240" y="292" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">OFI</text>
-        <text class="label" data-step="2" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="320"><tspan fill="#0030b6" font-weight="600">2-1. </tspan>Reports net position</tspan></text>
-        <text class="label" data-step="4" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="362"><tspan fill="#0030b6" font-weight="600">3-1. </tspan>Instructs collateral release</tspan></text>
-        <text class="label" data-step="6" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="404"><tspan fill="#041460" font-weight="600">4-1. </tspan>Releases collateral</tspan><tspan x="240" y="419">(Sending Country Stablecoin)</tspan></text>
-      </g>
-
-      <!-- Net Settlement Demand -->
-      <g class="box">
-        <rect x="120" y="470" width="240" height="50" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="240" y="500" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Net Settlement Demand</text>
-      </g>
-
-      <!-- Blockchain Operations -->
-      <g class="box">
-        <rect x="120" y="548" width="240" height="50" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="240" y="578" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Blockchain Operations</text>
-      </g>
-
-      <!-- BFI -->
-      <g class="box" data-tone="cyan">
-        <rect x="54" y="628" width="372" height="196" rx="16"/>
-        <text x="240" y="658" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">BFI</text>
-        <text class="label" data-step="3" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="686"><tspan fill="#041460" font-weight="600">2-2. </tspan>Reports net position</tspan></text>
-        <text class="label" data-step="5" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="726"><tspan fill="#041460" font-weight="600">3-2. </tspan>Validates net demand</tspan></text>
-        <text class="label" data-step="7" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="766"><tspan fill="#041460" font-weight="600">4-2. </tspan>Confirms release</tspan></text>
-        <text class="label" data-step="8" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="800"><tspan fill="#0030b6" font-weight="600">5. </tspan>Credits net settlement</tspan></text>
-      </g>
-
-      <!-- Collateral contracts -->
-      <g class="box" data-tone="deep">
-        <rect x="54" y="860" width="176" height="56" rx="12"/>
-        <text x="142" y="893" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">Collateral Contract</text>
-      </g>
-      <g class="box" data-tone="deep">
-        <rect x="250" y="860" width="176" height="56" rx="12"/>
-        <text x="338" y="893" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">Collateral Contract</text>
-      </g>
-
-      <!-- Receiving Institution -->
-      <g class="box">
-        <rect x="160" y="980" width="160" height="92" rx="12"/>
-        <text x="240" y="1010" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111827">Receiving Institution</text>
-        <text class="label" data-step="9" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="1034"><tspan fill="#0030b6" font-weight="600">6. </tspan>Receives net settlement</tspan><tspan x="240" y="1049">(Receiving Country)</tspan></text>
-      </g>
-    </svg>
-  </div>
-  <div class="flow-wrap">
-    <svg class="flow-landscape" viewBox="0 0 1200 700" role="img" aria-labelledby="direct-title direct-desc">
-      <title id="direct-title">Direct remittance process</title>
-      <desc id="direct-desc">A direct remittance moves from the sending institution through Aracore's ISN to the receiving institution and beneficiary — the remittance amount transfers on-chain with no collateral lock, message by message.</desc>
-      <defs>
-        <marker id="d-arrow-blue" data-tone="blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker>
-        <marker id="d-arrow-cyan" data-tone="cyan" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker>
-      </defs>
-      <text x="600" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#111827">Direct remittance process</text>
-      <text x="600" y="68" text-anchor="middle" font-size="13" fill="#6b7280">The remittance amount transfers directly on-chain — no collateral lock, message by message.</text>
-
-      <!-- ISN boundary -->
-      <rect x="226" y="110" width="774" height="560" rx="18" style="fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:7 6"/>
-      <text x="613" y="142" text-anchor="middle" font-size="16" font-weight="700" fill="#475569">ISN</text>
-
-      <!-- flow connectors (activate in sequence) -->
-      <path class="flowline" data-step="1" data-tone="blue" d="M180 325 H250" stroke-width="3" fill="none" marker-end="url(#d-arrow-blue)"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M460 242 H515" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M705 242 H770" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M460 377 H515" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M705 377 H770" stroke-width="3" fill="none"/>
-      <path class="flowline" data-step="8" data-tone="cyan" d="M980 325 H1035" stroke-width="3" fill="none" marker-end="url(#d-arrow-cyan)"/>
-
-      <!-- Sender -->
-      <g class="box">
-        <rect x="30" y="250" width="150" height="150" rx="14"/>
-        <text x="105" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Sender</text>
-        <text class="label" data-step="1" text-anchor="middle" font-size="11" fill="#374151"><tspan x="105" y="324"><tspan fill="#0030b6" font-weight="600">1. </tspan>Requests</tspan><tspan x="105" y="340">Remittance</tspan><tspan x="105" y="356">(Sending Currency)</tspan></text>
-      </g>
-
-      <!-- OFI -->
-      <g class="box" data-tone="blue">
-        <rect x="250" y="185" width="210" height="250" rx="16"/>
-        <text x="355" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">OFI</text>
-        <text class="label" data-step="2" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="262"><tspan fill="#0030b6" font-weight="600">2-1. </tspan>Requests</tspan><tspan x="355" y="278">Remittance Quote</tspan></text>
-        <text class="label" data-step="4" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="312"><tspan fill="#0030b6" font-weight="600">3-1. </tspan>Sends</tspan><tspan x="355" y="328">Remittance Info.</tspan></text>
-        <text class="label" data-step="6" text-anchor="middle" font-size="11" fill="#374151"><tspan x="355" y="366"><tspan fill="#041460" font-weight="600">4-1. </tspan>Transfers Remittance</tspan><tspan x="355" y="382">Amount (Dollar</tspan><tspan x="355" y="398">Stablecoin)</tspan></text>
-      </g>
-
-      <!-- Secure Message Routing -->
-      <g class="box">
-        <rect x="515" y="210" width="190" height="64" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="610" y="238" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Secure Message</text>
-        <text x="610" y="256" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Routing</text>
-      </g>
-
-      <!-- Blockchain Operations -->
-      <g class="box">
-        <rect x="515" y="345" width="190" height="64" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="610" y="373" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Blockchain</text>
-        <text x="610" y="391" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">Operations</text>
-      </g>
-
-      <!-- BFI -->
-      <g class="box" data-tone="cyan">
-        <rect x="770" y="185" width="210" height="250" rx="16"/>
-        <text x="875" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">BFI</text>
-        <text class="label" data-step="3" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="262"><tspan fill="#041460" font-weight="600">2-2. </tspan>Returns</tspan><tspan x="875" y="278">Confirmed Quote</tspan></text>
-        <text class="label" data-step="5" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="312"><tspan fill="#041460" font-weight="600">3-2. </tspan>Validates</tspan><tspan x="875" y="328">Remittance Info.</tspan></text>
-        <text class="label" data-step="7" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="362"><tspan fill="#041460" font-weight="600">4-2. </tspan>Verifies Receipt of</tspan><tspan x="875" y="378">Remittance Amount</tspan></text>
-        <text class="label" data-step="8" text-anchor="middle" font-size="11" fill="#374151"><tspan x="875" y="410"><tspan fill="#0030b6" font-weight="600">5. </tspan>Pays Beneficiary</tspan></text>
-      </g>
-
-      <!-- Beneficiary -->
-      <g class="box">
-        <rect x="1035" y="250" width="150" height="150" rx="14"/>
-        <text x="1110" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Beneficiary</text>
-        <text class="label" data-step="9" text-anchor="middle" font-size="11" fill="#374151"><tspan x="1110" y="324"><tspan fill="#0030b6" font-weight="600">6. </tspan>Receives Funds</tspan><tspan x="1110" y="340">(Receiving</tspan><tspan x="1110" y="356">Currency)</tspan></text>
-      </g>
-    </svg>
-
-    <svg class="flow-portrait" viewBox="0 0 480 1010" role="img" aria-labelledby="direct-title-v direct-desc-v">
-      <title id="direct-title-v">Direct remittance process</title>
-      <desc id="direct-desc-v">A direct remittance moves from the sending institution through Aracore's ISN to the receiving institution and beneficiary, with the amount transferred on-chain, message by message.</desc>
-      <defs>
-        <marker id="d-arrow-blue-v" data-tone="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"/></marker>
-        <marker id="d-arrow-cyan-v" data-tone="cyan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z"/></marker>
-      </defs>
-      <text x="240" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Direct remittance process</text>
-      <text x="240" y="52" text-anchor="middle" font-size="10.5" fill="#6b7280">Amount transfers on-chain — no collateral lock.</text>
-
-      <!-- ISN boundary -->
-      <rect x="28" y="214" width="424" height="630" rx="16" style="fill:none;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:7 6"/>
-      <text x="240" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">ISN</text>
-
-      <!-- connectors -->
-      <path class="flowline" data-step="1" data-tone="blue" d="M240 172 V214" stroke-width="2" fill="none" marker-end="url(#d-arrow-blue-v)"/>
-      <path class="flowline" data-step="2" data-tone="blue" d="M240 438 V470" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M240 520 V548" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="6" data-tone="deep" d="M240 598 V628" stroke-width="2" fill="none"/>
-      <path class="flowline" data-step="8" data-tone="cyan" d="M240 824 V880" stroke-width="2" fill="none" marker-end="url(#d-arrow-cyan-v)"/>
-
-      <!-- Sender -->
-      <g class="box">
-        <rect x="160" y="80" width="160" height="92" rx="12"/>
-        <text x="240" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Sender</text>
-        <text class="label" data-step="1" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="136"><tspan fill="#0030b6" font-weight="600">1. </tspan>Requests Remittance</tspan><tspan x="240" y="151">(Sending Currency)</tspan></text>
-      </g>
-
-      <!-- OFI -->
-      <g class="box" data-tone="blue">
-        <rect x="54" y="262" width="372" height="176" rx="16"/>
-        <text x="240" y="292" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">OFI</text>
-        <text class="label" data-step="2" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="320"><tspan fill="#0030b6" font-weight="600">2-1. </tspan>Requests Remittance Quote</tspan></text>
-        <text class="label" data-step="4" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="362"><tspan fill="#0030b6" font-weight="600">3-1. </tspan>Sends Remittance Info.</tspan></text>
-        <text class="label" data-step="6" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="404"><tspan fill="#041460" font-weight="600">4-1. </tspan>Transfers Remittance Amount</tspan><tspan x="240" y="419">(Dollar Stablecoin)</tspan></text>
-      </g>
-
-      <!-- Secure Message Routing -->
-      <g class="box">
-        <rect x="120" y="470" width="240" height="50" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="240" y="500" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Secure Message Routing</text>
-      </g>
-
-      <!-- Blockchain Operations -->
-      <g class="box">
-        <rect x="120" y="548" width="240" height="50" rx="12" style="fill:#eef2f7;stroke:#cbd5e1"/>
-        <text x="240" y="578" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Blockchain Operations</text>
-      </g>
-
-      <!-- BFI -->
-      <g class="box" data-tone="cyan">
-        <rect x="54" y="628" width="372" height="196" rx="16"/>
-        <text x="240" y="658" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">BFI</text>
-        <text class="label" data-step="3" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="686"><tspan fill="#041460" font-weight="600">2-2. </tspan>Returns Confirmed Quote</tspan></text>
-        <text class="label" data-step="5" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="726"><tspan fill="#041460" font-weight="600">3-2. </tspan>Validates Remittance Info.</tspan></text>
-        <text class="label" data-step="7" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="766"><tspan fill="#041460" font-weight="600">4-2. </tspan>Verifies Receipt of Remittance Amount</tspan></text>
-        <text class="label" data-step="8" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="800"><tspan fill="#0030b6" font-weight="600">5. </tspan>Pays Beneficiary</tspan></text>
-      </g>
-
-      <!-- Beneficiary -->
-      <g class="box">
-        <rect x="160" y="880" width="160" height="92" rx="12"/>
-        <text x="240" y="912" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Beneficiary</text>
-        <text class="label" data-step="9" text-anchor="middle" font-size="10.5" fill="#374151"><tspan x="240" y="936"><tspan fill="#0030b6" font-weight="600">6. </tspan>Receives Funds</tspan><tspan x="240" y="951">(Receiving Currency)</tspan></text>
-      </g>
-    </svg>
-  </div>
-</div>
     </div>
   </section>
 
-  <section class="logo-strip" aria-label="Institutional partner categories">
-    <div class="container logo-grid">
-      <div class="logo-card">Sending Bank<small>Payout request</small></div>
-      <div class="logo-card">Receiving Bank<small>Local payout</small></div>
-      <div class="logo-card">Payout Partner<small>Quote and execution</small></div>
-      <div class="logo-card">Settlement Partner<small>Demand and release</small></div>
-      <div class="logo-card">Custody Provider<small>Lock verification</small></div>
-      <div class="logo-card">Compliance Provider<small>Operational control</small></div>
+  <section class="trait-strip" aria-label="Aracore infrastructure characteristics">
+    <div class="container trait-grid">
+      <div class="trait-item"><b>Non-custodial</b><small>Asset-free infrastructure</small></div>
+      <div class="trait-item"><b>Regulation-native</b><small>Compliant by design</small></div>
+      <div class="trait-item"><b>Bank-anchored</b><small>Tier 1 institution</small></div>
+      <div class="trait-item"><b>Institutional-only</b><small>Licensed operators</small></div>
+    </div>
+  </section>
+
+  <section id="functions">
+    <div class="container">
+      <div class="section-head start">
+        <div class="kicker">What Aracore does</div>
+        <h2>One network, three functions</h2>
+        <p>The ISN connects settlement, liquidity, and on/off-ramp into a single institutional infrastructure layer.</p>
+      </div>
+      <div class="use-grid">
+        <div class="use-card">
+          <strong>Settlement Rail</strong>
+          <p>Messaging, netting, and orchestration between financial institutions. Non-custodial by design.</p>
+          <a class="card-link" href="product.html#flows">View settlement flow <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div class="use-card">
+          <strong>Liquidity Network</strong>
+          <p>Institutional liquidity providers plug into the ISN, available to corridor participants on demand.</p>
+          <a class="card-link" href="usecases.html#liquidity">View liquidity flow <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div class="use-card">
+          <strong>On / Off-Ramp</strong>
+          <p>Direct ramp operations in Korea and Thailand. Licensed partner operators in additional markets.</p>
+          <a class="card-link" href="usecases.html#ramp">View ramp flow <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="audience">
+    <div class="container">
+      <div class="section-head start">
+        <div class="kicker">Who it's for</div>
+        <h2>Built for institutions, not consumers</h2>
+      </div>
+      <div class="use-grid">
+        <div class="use-card"><strong>Financial institutions</strong><p>Open a settlement corridor and connect directly with partner institutions through the ISN.</p></div>
+        <div class="use-card"><strong>Payment companies</strong><p>Integrate liquidity access and on/off-ramp connectivity into existing payout infrastructure.</p></div>
+        <div class="use-card"><strong>Liquidity providers</strong><p>Make institutional liquidity available across corridors through a single network connection.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-head start">
+        <div class="kicker">Why Aracore</div>
+        <h2>Infrastructure, not intermediary</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><b>Non-custodial by design</b><p>Aracore holds no client funds. Assets remain with licensed custodians and partner banks at all times.</p></div>
+        <div class="why-item"><b>Regulation-compatible</b><p>Operates today within existing regulatory frameworks — no dependency on pending stablecoin legislation.</p></div>
+        <div class="why-item"><b>Bank-anchored credibility</b><p>Our anchor is Korea's largest internet-only bank and Upbit's exclusive real-name account provider.</p></div>
+        <div class="why-item"><b>Institutional-only</b><p>Built for financial institutions, payment companies, and licensed operators — every corridor agreed at the institutional level.</p></div>
+      </div>
     </div>
   </section>
 
