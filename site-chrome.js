@@ -40,6 +40,18 @@
             <a class="btn" href="developers.html">API Docs</a>
             <a class="btn primary" href="index.html#contact">Talk to us</a>
           </div>
+          <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu" hidden>
+          <div class="container mobile-menu-inner">
+            ${navItems.map(([label, href]) => `<a class="mobile-link${currentView === normalizePage(href) ? ' active' : ''}" href="${href}">${label}</a>`).join("")}
+            <div class="mobile-menu-cta">
+              <a class="btn" href="developers.html">API Docs</a>
+              <a class="btn primary" href="index.html#contact">Talk to us</a>
+            </div>
+          </div>
         </div>
       </nav>`;
   }
@@ -110,8 +122,25 @@
 
   function updateActiveNav(page) {
     currentView = page;
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    document.querySelectorAll(".nav-links a, .mobile-link").forEach(link => {
       link.classList.toggle("active", normalizePage(link.getAttribute("href")) === currentView);
+    });
+  }
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  function setMenuOpen(open) {
+    if (!navToggle || !mobileMenu) return;
+    navToggle.setAttribute("aria-expanded", String(open));
+    mobileMenu.hidden = !open;
+    document.body.classList.toggle("menu-open", open);
+  }
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", () => {
+      setMenuOpen(navToggle.getAttribute("aria-expanded") !== "true");
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") setMenuOpen(false);
     });
   }
 
@@ -213,6 +242,7 @@
     if (!link) return;
     const href = link.getAttribute("href");
     trackLinkIntent(link, href);
+    if (link.closest(".mobile-menu")) setMenuOpen(false);
     if (!href || href.startsWith("mailto:") || href.startsWith("tel:") || link.target) return;
     const url = new URL(href, location.href);
     if (url.origin !== location.origin) return;
