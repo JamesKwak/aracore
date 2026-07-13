@@ -40,7 +40,7 @@
       <div class="section-head"><div class="kicker">Use Cases</div><h1>Use cases for institutions that need controlled settlement flows.</h1><p>Cross-border payout is covered on the <a href="developers.html">developers</a> page. These scenarios show how the ISN handles on/off ramp conversion and network liquidity as separate but connected steps.</p></div>
 
       <div class="usecase-block" id="payout">
-        <span class="tag">Live Scenario</span>
+        <div class="uc-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><span class="tag">Live Scenario</span></div>
         <h2>Cross-border payout</h2>
         <p class="usecase-desc">Payout requests, quotes, payout approval, local execution, and final settlement move through one reference. The ISN routes secure messages between institutions and locks collateral on-chain, so funds only release once both sides are validated.</p>
         <div class="flow-label">Lock &amp; release settlement</div>
@@ -83,7 +83,7 @@
       </div>
 
       <div class="usecase-block" id="ramp">
-        <span class="tag">Future Service</span>
+        <div class="uc-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span><span class="tag">Future Service</span></div>
         <h2>On / Off ramp</h2>
         <p class="usecase-desc">An institution at the edge of a corridor needs to convert stablecoin into local fiat currency. The ISN routes the request to a licensed third-party partner in that country. Korea and Thailand are operated directly by the Aracore network, while other countries are served through partner operators.</p>
         <div class="flow-label">Flow (5 steps)</div>
@@ -136,7 +136,7 @@
       </div>
 
       <div class="usecase-block" id="liquidity">
-        <span class="tag">Future Service</span>
+        <div class="uc-top"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><span class="tag">Future Service</span></div>
         <h2>Liquidity supply</h2>
         <p class="usecase-desc">A corridor participant is facing a large settlement but does not hold enough stablecoin. The participant connects to the ISN liquidity network, borrows as much as needed, and pays interest and fees. Without finding and negotiating with individual providers directly, a single ISN connection gives access to liquidity across the whole network.</p>
         <div class="flow-label">Flow (5 steps)</div>

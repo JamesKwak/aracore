@@ -36,6 +36,23 @@
 <div id="site-chrome-top"></div>
 <main>
   <section class="hero" id="home">
+    <svg class="hero-art" viewBox="0 0 560 560" fill="none" aria-hidden="true">
+      <g transform="rotate(16 280 280)" stroke="#0030B6">
+        <circle cx="280" cy="280" r="250" stroke-opacity=".16"/>
+        <ellipse cx="280" cy="280" rx="250" ry="198" stroke-opacity=".12"/>
+        <ellipse cx="280" cy="280" rx="250" ry="140" stroke-opacity=".12"/>
+        <ellipse cx="280" cy="280" rx="250" ry="78" stroke-opacity=".12"/>
+        <ellipse cx="280" cy="280" rx="198" ry="250" stroke-opacity=".12"/>
+        <ellipse cx="280" cy="280" rx="140" ry="250" stroke-opacity=".12"/>
+        <ellipse cx="280" cy="280" rx="78" ry="250" stroke-opacity=".12"/>
+      </g>
+      <g transform="rotate(16 280 280)">
+        <path d="M30 280 A250 250 0 0 1 280 30" stroke="#1AA8FF" stroke-opacity=".5" stroke-width="1.5"/>
+        <circle cx="280" cy="30" r="5" fill="#0030B6" fill-opacity=".5"/>
+        <circle cx="30" cy="280" r="4" fill="#1AA8FF" fill-opacity=".65"/>
+        <circle cx="457" cy="103" r="3.5" fill="#0030B6" fill-opacity=".35"/>
+      </g>
+    </svg>
     <div class="container">
       <div class="hero-copy">
         <h1>The settlement infrastructure for regulated markets.</h1>
@@ -43,12 +60,14 @@
       </div>
       <div class="isn-diagram" role="img" aria-label="Aracore ISN sits as a non-custodial layer between a sending financial institution and a receiving financial institution.">
         <div class="isn-node">
+          <span class="isn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
           <span class="isn-role">Sending FI</span>
           <b class="isn-name">Institution A</b>
           <span class="isn-note">Payout request</span>
         </div>
         <span class="isn-arrow" aria-hidden="true">&rarr;</span>
         <div class="isn-node core">
+          <span class="isn-ico"><img src="brand/aracore-symbol-default.svg" alt="" width="24" height="24"></span>
           <span class="isn-role">Aracore</span>
           <b class="isn-name">ISN</b>
           <span class="isn-sub">Messaging · Lock verification · Settlement</span>
@@ -56,6 +75,7 @@
         </div>
         <span class="isn-arrow" aria-hidden="true">&rarr;</span>
         <div class="isn-node">
+          <span class="isn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
           <span class="isn-role">Receiving FI</span>
           <b class="isn-name">Institution B</b>
           <span class="isn-note">Local payout</span>
@@ -66,10 +86,10 @@
 
   <section class="trait-strip" aria-label="Aracore infrastructure characteristics">
     <div class="container trait-grid">
-      <div class="trait-item"><b>Non-custodial</b><small>Asset-free infrastructure</small></div>
-      <div class="trait-item"><b>Regulation-native</b><small>Compliant by design</small></div>
-      <div class="trait-item"><b>Bank-anchored</b><small>Tier 1 institution</small></div>
-      <div class="trait-item"><b>Institutional-only</b><small>Licensed operators</small></div>
+      <div class="trait-item"><span class="trait-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span><b>Non-custodial</b><small>Asset-free infrastructure</small></div>
+      <div class="trait-item"><span class="trait-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span><b>Regulation-native</b><small>Compliant by design</small></div>
+      <div class="trait-item"><span class="trait-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span><b>Bank-anchored</b><small>Tier 1 institution</small></div>
+      <div class="trait-item"><span class="trait-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span><b>Institutional-only</b><small>Licensed operators</small></div>
     </div>
   </section>
 
@@ -82,16 +102,19 @@
       </div>
       <div class="use-grid">
         <div class="use-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></div>
           <strong>Settlement Rail</strong>
           <p>Messaging, netting, and orchestration between financial institutions. Non-custodial by design.</p>
           <a class="card-link" href="product.html#flows">View settlement flow <span aria-hidden="true">&rarr;</span></a>
         </div>
         <div class="use-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></div>
           <strong>Liquidity Network</strong>
           <p>Institutional liquidity providers plug into the ISN, available to corridor participants on demand.</p>
           <a class="card-link" href="usecases.html#liquidity">View liquidity flow <span aria-hidden="true">&rarr;</span></a>
         </div>
         <div class="use-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div>
           <strong>On / Off-Ramp</strong>
           <p>Direct ramp operations in Korea and Thailand. Licensed partner operators in additional markets.</p>
           <a class="card-link" href="usecases.html#ramp">View ramp flow <span aria-hidden="true">&rarr;</span></a>
@@ -107,9 +130,9 @@
         <h2>Built for institutions, not consumers</h2>
       </div>
       <div class="use-grid">
-        <div class="use-card"><strong>Financial institutions</strong><p>Open a settlement corridor and connect directly with partner institutions through the ISN.</p></div>
-        <div class="use-card"><strong>Payment companies</strong><p>Integrate liquidity access and on/off-ramp connectivity into existing payout infrastructure.</p></div>
-        <div class="use-card"><strong>Liquidity providers</strong><p>Make institutional liquidity available across corridors through a single network connection.</p></div>
+        <div class="use-card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div><strong>Financial institutions</strong><p>Open a settlement corridor and connect directly with partner institutions through the ISN.</p></div>
+        <div class="use-card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></div><strong>Payment companies</strong><p>Integrate liquidity access and on/off-ramp connectivity into existing payout infrastructure.</p></div>
+        <div class="use-card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></div><strong>Liquidity providers</strong><p>Make institutional liquidity available across corridors through a single network connection.</p></div>
       </div>
     </div>
   </section>
@@ -132,10 +155,22 @@
   <section class="cta" id="contact">
   <div class="container">
     <div class="cta-box">
-      <h2>Considering Aracore ISN for regulated settlement operations?</h2>
-      <p>Contact us to discuss corridors, payout models, settlement cycles, partner integration, and operating requirements.</p>
-      <div class="hero-actions"><a class="btn primary" href="mailto:ops@aracore.io">Talk to us</a><a class="btn" href="developers.html">View API Docs</a></div>
-      <p class="cta-email">Or email us at <a href="mailto:ops@aracore.io">ops@aracore.io</a></p>
+      <svg class="band-art" viewBox="0 0 520 420" fill="none" aria-hidden="true">
+        <g stroke="#1AA8FF" stroke-width="1.5">
+          <circle cx="520" cy="420" r="140" stroke-opacity=".38"/>
+          <circle cx="520" cy="420" r="220" stroke-opacity=".28"/>
+          <circle cx="520" cy="420" r="300" stroke-opacity=".18"/>
+          <circle cx="520" cy="420" r="380" stroke-opacity=".1"/>
+        </g>
+        <circle cx="364" cy="264" r="4" fill="#1AA8FF" fill-opacity=".55"/>
+        <circle cx="308" cy="208" r="3" fill="#1AA8FF" fill-opacity=".35"/>
+      </svg>
+      <div class="cta-inner">
+        <h2>Considering Aracore ISN for regulated settlement operations?</h2>
+        <p>Contact us to discuss corridors, payout models, settlement cycles, partner integration, and operating requirements.</p>
+        <div class="hero-actions"><a class="btn primary" href="mailto:ops@aracore.io">Talk to us</a><a class="btn" href="developers.html">View API Docs</a></div>
+        <p class="cta-email">Or email us at <a href="mailto:ops@aracore.io">ops@aracore.io</a></p>
+      </div>
     </div>
   </div>
 </section>
