@@ -57,6 +57,7 @@ a{text-decoration:none;color:inherit}
 a:focus-visible,.btn:focus-visible{outline:2px solid var(--ara-blue);outline-offset:3px}
 .container{width:min(var(--max),calc(100% - 96px));margin:0 auto}
 main [id]{scroll-margin-top:88px}
+#site-chrome-top{display:contents}
 .nav{
   position:sticky;top:0;z-index:50;
   backdrop-filter:blur(12px);
