@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "aracore-static",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "5500"],
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "tools/serve.ps1", "5500"],
       "port": 5500
     }
   ]

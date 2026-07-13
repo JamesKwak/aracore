@@ -1,10 +1,24 @@
 (function () {
+  // [label, href, subItems?] — subItems render as a desktop dropdown only;
+  // the mobile menu ignores them and keeps top-level links.
   const navItems = [
-    ["Product", "product.html"],
-    ["Use Cases", "usecases.html"],
+    ["Product", "product.html", [
+      ["ISN", "product.html#product"],
+      ["Settlement Flows", "product.html#flows"],
+      ["Tech & IP", "product.html#tech"]
+    ]],
+    ["Use Cases", "usecases.html", [
+      ["Cross-border Payout", "usecases.html#payout"],
+      ["On / Off Ramp", "usecases.html#ramp"],
+      ["Liquidity Supply", "usecases.html#liquidity"]
+    ]],
     ["Developers", "developers.html"],
     ["Onboarding", "onboarding.html"],
-    ["Company", "company.html"]
+    ["Company", "company.html", [
+      ["About Us", "company.html#about"],
+      ["PR / News", "company.html#news"],
+      ["Events", "company.html#events"]
+    ]]
   ];
 
   let currentView = (location.pathname.split("/").pop() || "index.html").toLowerCase();
@@ -34,7 +48,12 @@
             <img class="brand-symbol" src="brand/aracore-sideway-default.svg" alt="Aracore" />
           </a>
           <div class="nav-links">
-            ${navItems.map(([label, href]) => `<a${activeClass(href)} href="${href}">${label}</a>`).join("")}
+            ${navItems.map(([label, href, subItems]) => {
+              const caret = subItems ? '<svg class="nav-caret" width="9" height="6" viewBox="0 0 9 6" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : "";
+              const topLink = `<a${activeClass(href)} href="${href}">${label}${caret}</a>`;
+              if (!subItems) return topLink;
+              return `<div class="nav-item">${topLink}<div class="nav-sub">${subItems.map(([subLabel, subHref]) => `<a href="${subHref}">${subLabel}</a>`).join("")}</div></div>`;
+            }).join("")}
           </div>
           <div class="nav-cta">
             <a class="btn" href="developers.html">API Docs</a>
@@ -79,9 +98,9 @@
           </div>
           <div>
             <b>Use Cases</b>
-            <a href="usecases.html">Remittance</a>
-            <a href="usecases.html">Liquidity</a>
-            <a href="usecases.html">On / Off Ramp</a>
+            <a href="usecases.html#payout">Remittance</a>
+            <a href="usecases.html#liquidity">Liquidity</a>
+            <a href="usecases.html#ramp">On / Off Ramp</a>
           </div>
           <div>
             <b>Company</b>
@@ -123,6 +142,7 @@
   function updateActiveNav(page) {
     currentView = page;
     document.querySelectorAll(".nav-links a, .mobile-link").forEach(link => {
+      if (link.closest(".nav-sub")) return;
       link.classList.toggle("active", normalizePage(link.getAttribute("href")) === currentView);
     });
   }
@@ -143,6 +163,25 @@
       if (event.key === "Escape") setMenuOpen(false);
     });
   }
+
+  // Back-to-top button: part of the shared chrome, appended to <body> so it
+  // survives soft navigation. Shown only after meaningful scrolling, so pages
+  // that fit in (or nearly fit in) one viewport never surface it.
+  const toTop = document.createElement("button");
+  toTop.className = "to-top";
+  toTop.type = "button";
+  toTop.setAttribute("aria-label", "Back to top");
+  toTop.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 10l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  toTop.addEventListener("click", () => {
+    scrollTo({ top: 0, behavior: "smooth" });
+    toTop.blur();
+  });
+  document.body.appendChild(toTop);
+  const updateToTop = () => {
+    toTop.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6);
+  };
+  window.addEventListener("scroll", updateToTop, { passive: true });
+  updateToTop();
 
   function scrollToHash(hash) {
     if (!hash) {
@@ -281,6 +320,20 @@
     const page = normalizePage(url.href);
     if (!page.endsWith(".html")) return;
     event.preventDefault();
+    const sub = link.closest(".nav-sub");
+    if (sub) {
+      // The dropdown is shown via :hover/:focus-within — hide it until the
+      // pointer leaves the nav item, otherwise it lingers after navigation.
+      link.blur();
+      sub.style.display = "none";
+      sub.closest(".nav-item").addEventListener("mouseleave", () => {
+        sub.style.display = "";
+      }, { once: true });
+    }
+    if (page === currentView && url.hash) {
+      scrollToHash(url.hash);
+      return;
+    }
     loadPageInPlace(url.href).then(loaded => {
       if (!loaded) location.href = href;
     });
