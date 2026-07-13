@@ -237,10 +237,42 @@
     }
   }
 
+  function showComingSoon() {
+    const existing = document.getElementById("coming-soon-toast");
+    if (existing) existing.dismiss();
+
+    const toast = document.createElement("div");
+    toast.id = "coming-soon-toast";
+    toast.className = "toast";
+    toast.setAttribute("role", "status");
+    toast.textContent = "API reference is coming soon — thank you for your patience.";
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add("is-visible"));
+
+    let done = false;
+    toast.dismiss = () => {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      document.removeEventListener("click", onClick, true);
+      toast.classList.remove("is-visible");
+      toast.addEventListener("transitionend", () => toast.remove(), { once: true });
+    };
+    const onClick = () => toast.dismiss();
+    const timer = setTimeout(() => toast.dismiss(), 1000);
+    // Register after the current click finishes so it isn't dismissed immediately.
+    setTimeout(() => document.addEventListener("click", onClick, true), 0);
+  }
+
   document.addEventListener("click", event => {
     const link = event.target.closest("a[href]");
     if (!link) return;
     const href = link.getAttribute("href");
+    if (link.hasAttribute("data-coming-soon")) {
+      event.preventDefault();
+      showComingSoon();
+      return;
+    }
     trackLinkIntent(link, href);
     if (link.closest(".mobile-menu")) setMenuOpen(false);
     if (!href || href.startsWith("mailto:") || href.startsWith("tel:") || link.target) return;
